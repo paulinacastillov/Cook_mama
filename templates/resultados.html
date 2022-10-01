@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+{% endblock %}
+
+{% block head %} 
+
+{% endblock %}
+
+{% block body %}
+
+    {% if mensaje %}
+
+        <div class="d-flex justify-content-center" style="margin-top: 5rem;">
+            <h2> Ups, parece que no hay recetas con esas características 😞 </h2>
+        </div>
+
+        <div class="d-flex justify-content-center" style="margin-top: 5rem;">
+            <h4> ¿Por qué no intentas de nuevo?</h4>
+        </div>
+
+
+
+
+    {% endif %}
+
+
+    <div class="d-flex justify-content-center">
+        <div class="row row-cols-1 row-cols-md-2 g-4" style="margin-top: 3rem; width: 80%"> 
+            {% for receta in resultado %}
+                <div class="col">
+                    <div class="card text-bg-dark mb-3">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ receta['Nombre'] }} </h5>
+                        <hr class="bg-light border-2 border-top border-light">
+                            
+                        <div class="row">
+
+                            {% for ing in receta["Ingredientes"] %}
+
+                                <div class="col-md-5 mb-7">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                        {{ing.title()}}
+                                        </label>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                            
+                        </div>
+                                    
+                        <hr class="bg-light border-2 border-top border-light">    
+                        
+                        <p class="card-text" style="margin-top: 1rem">{{ receta['Instrucciones'] }}.</p>
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+            {% endfor %}
+        </div>   
+
+    </div>
+    
+    
+{% endblock %}
