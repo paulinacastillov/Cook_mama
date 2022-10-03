@@ -17,6 +17,7 @@ textarea {
     resize: none;
   }
 
+
 input[type="checkbox"] {
 	appearance: none;
 	width: 20px;
@@ -33,4 +34,3 @@ input[type="checkbox"]:checked {
 ul {
     list-style: none;
 }
-

@@ -15,7 +15,7 @@ recetas = [
 ]
 
 
-alergiasData = {'Mariscos': ['camaron, cangrejo','almeja','pulpo'],'alergia2':['coso1','coso2']} #alimentos en 
+alergiasData = {'Mariscos': ['camaron, cangrejo','almeja','pulpo','langostinos'],'alergia2':['coso1','coso2'], ,'alergia3':['coso3','coso4']} #alimentos en 
 
 ingredientes_recetas = set()
 for receta in recetas:

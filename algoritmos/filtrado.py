@@ -9,9 +9,8 @@ def funciónFiltroRecetas(alergias=None, ingredientes=None ): #sería una lista 
 
   recetasFiltradas = []
   recetasFiltradasAlergia = []
-  recetasFiltradasIngredientes = set()
-  ingredientes_alergias = set()
-  ingredientes_casa = set()
+  ingredientes_alergias = []
+
 
   if ingredientes == None and alergias == None: #Caso sin restricciones
     return []
@@ -20,7 +19,7 @@ def funciónFiltroRecetas(alergias=None, ingredientes=None ): #sería una lista 
 
     for alergia in alergias:
       for ing_alergia in alergiasData[alergia]:
-        ingredientes_alergias.add(ing_alergia)
+        ingredientes_alergias.append(ing_alergia)
 
     for receta in recetas:
       for ing in ingredientes_alergias:
@@ -38,12 +37,18 @@ def funciónFiltroRecetas(alergias=None, ingredientes=None ): #sería una lista 
 
     for alergia in alergias:
       for ing_alergia in alergiasData[alergia]:
-        ingredientes_alergias.add(ing_alergia)
-
+        if not ing_alergia in ingredientes_alergias:
+          ingredientes_alergias.append(ing_alergia)
+          
+  
     for receta in recetas:
+      ing_recetas = []
       for ing in ingredientes_alergias:
-        if not verifica(ing,receta) and not receta in recetasFiltradasAlergia:
+        ing_recetas.append( not(verifica(ing,receta)))
+        
+      if all(ing_recetas) and not receta in recetasFiltradasAlergia:
           recetasFiltradasAlergia.append(receta)
+       
   
 
     for receta in recetasFiltradasAlergia:
@@ -53,5 +58,3 @@ def funciónFiltroRecetas(alergias=None, ingredientes=None ): #sería una lista 
 
     
   return(recetasFiltradas)
-
-  #hasta acá funciona, quiero hacerle una puntuación de receta más cercana a los ingredientes que tiene

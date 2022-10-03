@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-
 {% block title %}
 
 {% endblock %}
@@ -16,7 +15,9 @@
     </div>
 
     <div class="d-flex justify-content-center" style="margin-top: 2rem; ">
+
         <form method="POST" action="/" class="grid" novalidate style="width: 80%; margin-bottom: 3rem;">
+            
             {{ form.csrf_token }}
             {{ form.hidden_tag() }}
         
@@ -34,7 +35,13 @@
             </div>
             
             <div class="d-flex justify-content-center" style="margin-top: rem;">
-                {{ form.searchButton(class="btn btn-danger")}} 
+                {# form.searchButton(class="btn btn-danger")#}
+                <button type="submit" class="btn btn-danger" name="searchButton" value="x">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    Buscar
+                </button>
+                
+               
             </div>
             
         </form>     
