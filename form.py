@@ -4,10 +4,10 @@ from wtforms import TextAreaField, SubmitField, SelectMultipleField, validators,
 from wtforms.validators import DataRequired, Length
 
 ALERGIAS = ["Mariscos", 
-            #"Trigo", 
+            "Gluten", 
             #"Maní",'Pescado',
             #'Frutos secos',
-            #'Lácteos',
+            'Lácteos'
             ]
 
 INGREDIENTES = ['fresas', 'yogurt natural', 'estevia', 'naranja','jamon','caldo','pollo','pimienta','aceite_oliva','apio','cebolla','pimenton_pimiento','ajo','arroz']

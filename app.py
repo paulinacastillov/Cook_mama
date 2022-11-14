@@ -13,6 +13,7 @@ app = Flask(__name__,
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 
+
 @app.route('/', methods=['GET', 'POST'])
 def home():
     form = SearchForm()
@@ -20,7 +21,7 @@ def home():
         if form.searchButton.data:
             ingredients = form.input_ingredients.data
             allergies = form.input_allergies.data
-            ingredients_list = list( set(ingredients.split()) & ingredientes_recetas )
+            ingredients_list = list( set([elem.lower() for elem in ingredients.split()]) & ingredientes_recetas )
             
             if len(allergies) == 0:
                 allergies = None
