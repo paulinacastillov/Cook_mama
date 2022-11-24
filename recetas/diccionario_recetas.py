@@ -94,7 +94,6 @@ Una vez se cocinen, añadimos las almejas y dejamos que se cocinen 2 minutos. Cu
 ]
 
 
-
 #https://drive.google.com/file/d/1xKDzb3cBpYFZIoLxPCsoc5C4OzDqPetr/view?usp=sharing
 #https://drive.google.com/uc?id=1xKDzb3cBpYFZIoLxPCsoc5C4OzDqPetr
 
