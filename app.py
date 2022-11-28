@@ -36,10 +36,14 @@ def home():
 @app.route('/resultados', methods=['GET', 'POST'])
 def mostrar_recetas():
     resultado = session.get("recetas_filtradas")
-    if len(resultado) != 0:
-        return render_template('resultados.html', resultado = resultado)
-    else:
+    try:
+        if len(resultado) != 0:
+            return render_template('resultados.html', resultado = resultado)
+        else:
+            return render_template('resultados.html', mensaje = True)
+    except:
         return render_template('resultados.html', mensaje = True)
+
 
     
 @app.route('/recetas', methods=['GET', 'POST'])
